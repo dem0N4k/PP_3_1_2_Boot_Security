@@ -10,7 +10,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,26 +40,6 @@ public class User {
         return username;
     }
 
-//    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-//    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-//    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-//    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -72,11 +52,6 @@ public class User {
         this.surName = surName;
     }
 
-//    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -84,10 +59,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-//    public User getUser() {
-//        return this.user;
-//    }
 
     @Override
     public String toString() {
