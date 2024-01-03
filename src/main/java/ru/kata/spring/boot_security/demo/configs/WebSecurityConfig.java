@@ -31,9 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 //
                 .formLogin()
-//                .loginPage("/login")
                 .successHandler(successUserHandler)
-//                .loginProcessingUrl("/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .permitAll()
@@ -44,9 +42,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login")
                 .and()
                 .csrf().disable();
-//
-////                //выключаем кросс-доменную секьюрность (на этапе обучения неважна)
-////                .and().csrf().disable(); //- попробуйте выяснить сами, что это даёт
     }
     // аутентификация inMemory
     @Bean
