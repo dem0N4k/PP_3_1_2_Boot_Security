@@ -8,11 +8,11 @@ import ru.kata.spring.boot_security.demo.repository.UserRepository;
 import java.util.List;
 
 @Service
-public class AdminServiceImpl implements AdminService {
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Autowired
-    public AdminServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
