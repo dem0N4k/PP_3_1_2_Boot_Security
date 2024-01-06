@@ -42,22 +42,22 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @GetMapping("/updateUser")
+    @GetMapping("admin/updateUser")
     public String updateUserForm(@RequestParam("id") Long id, Model model) {
         User user = adminService.getUser(id);
         model.addAttribute("user", user);
         return "user-update";
     }
 
-    @PostMapping("/updateUser")
+    @PostMapping("admin/updateUser")
     public String updateUser(User user) {
         adminService.saveUser(user);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
-    @GetMapping("/deleteUser")
+    @GetMapping("admin/deleteUser")
     public String deleteUser(@RequestParam("id") Long id) {
         adminService.deleteUser(id);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 }

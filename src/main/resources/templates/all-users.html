@@ -14,8 +14,10 @@
             <tr>
                 <th>Id</th>
                 <th>Username</th>
-                <th>Surname</th>
-                <th>password</th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
                 <th colspan="2">Operations</th>
             </tr>
             </thead>
@@ -25,11 +27,13 @@
 
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.username}"></td>
-                <td th:text="${user.surName}"></td>
                 <td th:text="${user.password}"></td>
-                <td><a th:href="@{/updateUser(id=${user.id})}">
+                <td th:text="${user.firstName}"></td>
+                <td th:text="${user.lastName}"></td>
+                <td th:text="${user.email}"></td>
+                <td><a th:href="@{admin/updateUser(id=${user.id})}">
                     <input type="button" value="Update"/></a></td>
-                <td><a th:href="@{/deleteUser(id=${user.id})}">
+                <td><a th:href="@{admin/deleteUser(id=${user.id})}">
                     <input type="button" value="Delete"/></a></td>
             </tr>
             </tbody>
@@ -38,6 +42,12 @@
     </div>
     <input type="button" value="Create user"
            onclick="window.location.href = 'admin/saveUser'"/>
+
+    <br>
+    <br>
+    <form th:action="@{/logout}">
+        <button type="submit">Logout</button>
+    </form>
 
 </div>
 </body>

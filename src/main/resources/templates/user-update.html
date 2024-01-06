@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/updateUser}" th:object="${user}" method="post">
+<form action="#" th:action="@{/admin/updateUser}" th:object="${user}" method="post">
 
     <label for="id" hidden>ID</label>
     <input readonly type="number" th:field="*{id}" id="id" placeholder="ID" hidden>
@@ -14,13 +14,26 @@
     <label for="username">Enter username: </label>
     <input type="text" th:field="*{username}" id="username" placeholder="username"/>
     <br>
-    <label for="surname">Enter surname: </label>
-    <input type="text" th:field="*{surName}" id="surname" placeholder="surname"/>
+    <label for="password">Enter username: </label>
+    <input type="text" th:field="*{password}" id="password" placeholder="password"/>
     <br>
-    <label for="address">Enter password: </label>
-    <input type="text" th:field="*{password}" id="address" placeholder="address"/>
+    <label for="firstname">Enter surname: </label>
+    <input type="text" th:field="*{firstName}" id="firstname" placeholder="firstname"/>
+    <br>
+    <label for="lastname">Enter surname: </label>
+    <input type="text" th:field="*{lastName}" id="lastname" placeholder="lastname"/>
+    <br>
+    <label for="email">Enter surname: </label>
+    <input type="text" th:field="*{email}" id="email" placeholder="email"/>
+    <br>
     <br><br>
     <input type="submit" value="Update!">
+</form>
+
+<br>
+<br>
+<form th:action="@{/logout}">
+    <button type="submit">Logout</button>
 </form>
 
 </body>
