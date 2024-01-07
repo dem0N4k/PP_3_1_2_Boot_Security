@@ -38,8 +38,6 @@ public class AdminController {
         return "user-create";
     }
 
-
-
     @PostMapping("/saveUser")
     public String saveUser(@ModelAttribute("user") User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
