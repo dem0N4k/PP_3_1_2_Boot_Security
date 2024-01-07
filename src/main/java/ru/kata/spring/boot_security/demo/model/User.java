@@ -34,6 +34,15 @@ public class User implements Serializable, UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
+    public static UserDetails fromUser(User user) {
+        return new org.springframework.security.core.userdetails.User(
+                user.getUsername(),user.getPassword(),
+                user.isAccountNonExpired(), user.isCredentialsNonExpired(),
+                user.isEnabled(), user.isAccountNonLocked(),
+                user.getRoles()
+        );
+    }
+
     public User() {
     }
 
