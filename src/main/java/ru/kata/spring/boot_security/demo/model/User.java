@@ -27,6 +27,7 @@ public class User implements Serializable, UserDetails {
     private String lastName;
 
     private String email;
+    private String role;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "users_roles",
@@ -35,6 +36,14 @@ public class User implements Serializable, UserDetails {
     private Set<Role> roles = new HashSet<>();
 
     public User() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public User(String username, String password, String firstName, String lastName, String email, Set<Role> roles) {

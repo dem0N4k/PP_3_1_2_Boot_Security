@@ -42,6 +42,7 @@ public class AdminController {
 
     @PostMapping("/saveUser")
     public String saveUser(@ModelAttribute("user") User user) {
+        user.setRole("ROLE_USER");
         userService.saveUser(user);
         return "redirect:/admin";
     }
