@@ -33,6 +33,11 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return Optional.empty();
+    }
+
 //    @Override
 //    public Optional<User> findByUsername(String username) {
 //        return ;
