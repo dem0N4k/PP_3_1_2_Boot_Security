@@ -23,16 +23,17 @@ public class UserController {
     }
 
     @GetMapping("")
-    public String showUserInfo(@CurrentSecurityContext(expression = "authentication.principal") User principal,
+    public String showUserInfo( User principal,
                                Model model) {
         model.addAttribute("user", principal);
 
         return "user";
     }
 
-    @GetMapping(value = "")
-    public String getUserPage(ModelMap modelMap, Principal principal) {
-        modelMap.addAttribute("user",userService.findByUsername(principal.getName()));
-        return "user";
-    }
+//    @GetMapping(value = "")
+//    public String getUserPage(ModelMap modelMap, Principal principal) {
+//        modelMap.addAttribute("user",userService.findByUsername(principal.getName()));
+//        return "user";
+//    }
+
 }
