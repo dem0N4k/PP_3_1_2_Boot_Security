@@ -30,9 +30,9 @@ public class UserController {
         return "user";
     }
 
-//    @GetMapping(value = "")
-//    public String getUserPage(ModelMap modelMap, Principal principal) {
-//        modelMap.addAttribute("user",userService.findByUsername(principal.getName()));
-//        return "user";
-//    }
+    @GetMapping(value = "")
+    public String getUserPage(ModelMap modelMap, Principal principal) {
+        modelMap.addAttribute("user",userService.findByUsername(principal.getName()));
+        return "user";
+    }
 }
